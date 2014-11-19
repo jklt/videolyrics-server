@@ -1,4 +1,7 @@
 <?php
+$url = parse_url(getenv('DATABASE_URL'));
+print_r($url);
+die();
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

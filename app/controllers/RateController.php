@@ -10,9 +10,10 @@ class RateController extends BaseController {
 
     public function rateVideo()
     {
-        $ratings = Rate::where('score', '>', 0)->take(10)->get();
+        echo 'test';
+        $ratings = Rate::all();
         foreach ($ratings as $rating) {
-            print_r($rating);
+            var_dump($rating);
         }
         die();
     }

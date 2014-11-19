@@ -1,5 +1,5 @@
 <?php
-
+/*
 $url = parse_url(getenv('DATABASE_URL'));
 
 return [
@@ -16,3 +16,5 @@ return [
         ],
     ]
 ];
+*/
+return [];
