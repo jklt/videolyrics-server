@@ -46,7 +46,7 @@ return array(
 
 	'connections' => array(
 
-        /*'pgsql' => array(
+        'pgsql' => array(
             'driver'   => 'pgsql',
             'host'     => 'ec2-54-217-231-67.eu-west-1.compute.amazonaws.com',
             'database' => 'db2uqam7sef86j',
@@ -57,7 +57,7 @@ return array(
             'prefix'   => '',
             'schema'   => 'public',
             'sslmode'  => 'require',
-        ),*/
+        ),
 
 	),
 
