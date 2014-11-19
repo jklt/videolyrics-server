@@ -44,22 +44,7 @@ return array(
 	|
 	*/
 
-	'connections' => array(
-
-        'pgsql' => array(
-            'driver'   => 'pgsql',
-            'host'     => 'ec2-54-217-231-67.eu-west-1.compute.amazonaws.com',
-            'database' => 'db2uqam7sef86j',
-            'username' => 'unalsgpcnxdftf',
-            'password' => 'XmnsTXsD5WfKRxOOE332ZeiuRb',
-            'port'     => '5432',
-            'charset'  => 'utf8',
-            'prefix'   => '',
-            'schema'   => 'public',
-            'sslmode'  => 'require',
-        ),
-
-	),
+	'connections' => array(),
 
 	/*
 	|--------------------------------------------------------------------------
