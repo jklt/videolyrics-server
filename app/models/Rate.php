@@ -20,5 +20,6 @@ class Rate extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'rate';
+	protected $primaryKey = 'rateID';
 
 }

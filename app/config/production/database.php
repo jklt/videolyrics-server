@@ -1,7 +1,4 @@
 <?php
-echo 'PRODUCTION DB';
-die();
-
 $url = parse_url(getenv('DATABASE_URL'));
 
 return [
