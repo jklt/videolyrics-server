@@ -25,7 +25,7 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment(function () {
-    return getenv('APP_ENV') == 'local' ? 'local' : 'production';
+    return getenv('APP_ENV') == 'local' || getenv('DATABASE_URL') === false ? 'local' : 'production';
 });
 
 /*
