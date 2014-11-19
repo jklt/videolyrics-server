@@ -1,0 +1,77 @@
+{
+    "basePath": "http://vls.app/1.0/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0",
+    "resourcePath": "/video",
+    "apis": [
+        {
+            "path": "video/rate",
+            "description": "Video recommender system.",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Rate a video.",
+                    "nickname": "rateVideo",
+                    "parameters": [
+                        {
+                            "name": "videoID",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "The ID of the video for which the average rating will be calculated."
+                        },
+                        {
+                            "name": "IP",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "IP of the machine from which the vote was initiated."
+                        },
+                        {
+                            "name": "rating",
+                            "type": "integer",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "The rating (either -1, 0 or 1) where -1 means a negative rating, 0 means neutral or no rating and 1 means positive rating."
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "The vote was saved."
+                        },
+                        {
+                            "code": 500,
+                            "message": "The vote could not be saved."
+                        }
+                    ]
+                },
+                {
+                    "method": "GET",
+                    "summary": "Get the average rating of a video.",
+                    "nickname": "videoRating",
+                    "parameters": [
+                        {
+                            "name": "videoID",
+                            "type": "string",
+                            "required": false,
+                            "allowMultiple": false,
+                            "description": "The ID of the video for which the average rating will be calculated. If no ID is specified, a list of all video and average ratings is returned."
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "A response containing the average rating of all ratings for the requested video."
+                        },
+                        {
+                            "code": 500,
+                            "message": "The rating could not be fetched."
+                        }
+                    ],
+                    "notes": "The average rating consists of a number where -1 means negative, 1 means positive, 0 means neutral and everything in between is also possible."
+                }
+            ]
+        }
+    ]
+}
