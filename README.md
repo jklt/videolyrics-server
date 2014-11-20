@@ -13,5 +13,5 @@ videolyrics-server
 1. Make sure the [Heroku Toolbelt](https://toolbelt.heroku.com) is installed.
 2. Add the `heroku` remote to the Git repository: `cd` into the `videolyrics-server` directory and run `heroku git:remote -a videolyrics`
 3. Run `git push heroku master` to deploy the application to Heroku.
-4. Run `git push -u origin master` to deploy the application to GitHub.
+4. Run `git push -u origin master` to push the application to GitHub.
 5. If it is the first time the application is deployed, make sure you change the database configuration and execute "heroku run php artisan migrate"
