@@ -6,9 +6,6 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
-// Fix the access control
-header('Access-Control-Allow-Origin: *');
-
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
