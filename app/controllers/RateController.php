@@ -73,12 +73,12 @@
 
 class RateController extends Controller {
 
-    public function rate()
+    public function rate_10()
     {
 
     }
 
-    public function lookup()
+    public function lookup_10()
     {
 
     }

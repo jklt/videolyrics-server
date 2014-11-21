@@ -863,6 +863,7 @@ SwaggerOperation.prototype["do"] = function(args, opts, callback, error) {
   var possibleParams = [];
   for(var i = 0; i < this.parameters.length; i++) {
     var param = this.parameters[i];
+    param.paramType = param.type;
     if(param.paramType === 'header') {
       if(args[param.name])
         params.headers[param.name] = args[param.name];

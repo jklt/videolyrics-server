@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/video/', array('uses' => 'VideoController@lookUp'));
-Route::get('/lyrics/', array('uses' => 'LyricsController@lookUp'));
-Route::get('/music/', array('uses' => 'MusicController@lookUp'));
-Route::get('/music/list/', array('uses' => 'MusicController@find'));
-Route::get('/rate/', array('uses' => 'RateController@lookUp'));
-Route::post('/rate/', array('uses' => 'RateController@rate'));
+Route::get('/1.0/video/', array('uses' => 'VideoController@lookUp_10'));
+Route::get('/1.0/lyrics/', array('uses' => 'LyricsController@lookUp_10'));
+Route::get('/1.0/music/', array('uses' => 'MusicController@lookUp_10'));
+Route::get('/1.0/music/list/', array('uses' => 'MusicController@find_10'));
+Route::get('/1.0/rate/', array('uses' => 'RateController@lookUp_10'));
+Route::post('/1.0/rate/', array('uses' => 'RateController@rate_10'));
 Route::any('/', function() {
     return Redirect::to('/api-docs/');
 });

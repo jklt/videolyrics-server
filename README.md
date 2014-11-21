@@ -15,3 +15,6 @@ videolyrics-server
 3. Run `git push heroku master` to deploy the application to Heroku.
 4. Run `git push -u origin master` to push the application to GitHub.
 5. If it is the first time the application is deployed, make sure you change the database configuration and execute "heroku run php artisan migrate"
+
+### View the deployed application
+Go to https://video-lyrics.herokuapp.com/.

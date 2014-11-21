@@ -61,13 +61,13 @@
 
 class MusicController extends Controller {
 
-    public function lookUp()
+    public function lookUp_10()
     {
         $musicDB = new MusixMatchModel();
         $musicDB->lookUp('coldplay');
     }
 
-    public function find()
+    public function find_10()
     {
 
     }

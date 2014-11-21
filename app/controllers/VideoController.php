@@ -29,7 +29,7 @@
 
 class VideoController extends Controller {
 
-    public function lookUp()
+    public function lookUp_10()
     {
 
     }
