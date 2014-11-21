@@ -80,7 +80,7 @@ class RateController extends Controller {
 
     public function lookup_10()
     {
-
+        echo 'abc';
     }
 
 }
