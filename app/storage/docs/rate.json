@@ -1,8 +1,8 @@
 {
-    "basePath": "video-lyrics.herokuapp.com",
+    "basePath": "http://video-lyrics.herokuapp.com/1.0",
     "swaggerVersion": "1.2",
     "apiVersion": "1.0",
-    "resourcePath": "/rate",
+    "resourcePath": "rate",
     "apis": [
         {
             "path": "/rate/",

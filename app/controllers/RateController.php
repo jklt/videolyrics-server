@@ -5,8 +5,8 @@
  * @SWG\Resource(
  *      apiVersion="1.0",
  *      swaggerVersion="1.2",
- *      resourcePath="/rate",
- *      basePath="video-lyrics.herokuapp.com",
+ *      resourcePath="rate",
+ *      basePath="http://video-lyrics.herokuapp.com/1.0",
  *      @SWG\Api(
  *          description="Recommender system.",
  *          path="/rate/",

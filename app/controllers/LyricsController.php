@@ -4,8 +4,8 @@
  * @SWG\Resource(
  *      apiVersion="1.0",
  *      swaggerVersion="1.2",
- *      resourcePath="/lyrics",
- *      basePath="http://video-lyrics.herokuapp.com/1.0/",
+ *      resourcePath="lyrics",
+ *      basePath="http://video-lyrics.herokuapp.com/1.0",
  *      @SWG\Api(
  *          description="Lyrics look-up engine.",
  *          path="/lyrics/",
