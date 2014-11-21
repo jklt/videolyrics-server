@@ -16,7 +16,7 @@ class MusicModel extends Eloquent {
     protected $table = 'music';
     protected $primaryKey = 'musicID';
 
-    public function lookUp() {
+    public function lookUp($query, $offset, $limit) {
 
     }
 

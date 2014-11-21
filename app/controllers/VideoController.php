@@ -1,5 +1,5 @@
 <?php
-
+use Madcoda\Youtube;
 /**
  * @SWG\Resource(
  *      apiVersion="1.0",
@@ -31,7 +31,14 @@ class VideoController extends Controller {
 
     public function lookUp_10()
     {
+        //$youtubeDB = new YouTubeModel();
+        //$result = $youtubeDB->lookUp('coldplay');
 
+
+        $youtube = new Youtube(array('key' => 'AIzaSyBf6lUGqowSjbJNC7eL61cPS2mBj8wF2NM'));
+        // Search only Videos, Return an array of PHP objects
+        $videoList = $youtube->searchVideos('coldplay');
+        print_r($videoList);
     }
 
 }

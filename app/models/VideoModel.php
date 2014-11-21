@@ -16,4 +16,8 @@ class VideoModel extends Eloquent {
     protected $table = 'video';
     protected $primaryKey = 'videoID';
 
+    public function lookUp() {
+
+    }
+
 }

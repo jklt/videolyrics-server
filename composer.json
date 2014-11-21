@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "jlapp/swaggervel": "dev-master"
+        "jlapp/swaggervel": "dev-master",
+        "madcoda/php-youtube-api" : "dev-master"
 	},
 	"autoload": {
 		"classmap": [

@@ -34,6 +34,7 @@ class MusixMatchModel extends APIModel {
         } else {
             $result = Cache::get($cacheLabel);
         }
+        return $result;
     }
 
 }

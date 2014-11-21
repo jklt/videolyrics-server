@@ -14,6 +14,7 @@ videolyrics-server
 2. Add the `heroku` remote to the Git repository: `cd` into the `videolyrics-server` directory and run `heroku git:remote -a videolyrics`
 3. Run `git push heroku master` to deploy the application to Heroku.
 4. Run `git push -u origin master` to push the application to GitHub.
+4. Make sure that APP_ENV is set to "production" on any production environment.
 
 ### View the deployed application
 Go to https://video-lyrics.herokuapp.com/.

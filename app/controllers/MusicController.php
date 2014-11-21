@@ -28,7 +28,7 @@
  *                  description="The first few items (specified by the offset parameter) will not be included in the results (no offset as default)."
  *              ),
  *              @SWG\Parameter(
- *                  name="items",
+ *                  name="limit",
  *                  required=false,
  *                  allowMultiple=false,
  *                  type="string",
@@ -64,12 +64,17 @@ class MusicController extends Controller {
     public function lookUp_10()
     {
         $musicDB = new MusixMatchModel();
-        $musicDB->lookUp('coldplay');
+        $results = $musicDB->lookUp('coldplay');
     }
 
     public function find_10()
     {
-
+        $q = Input::get('query');
+        $offset = Input::get('offset');
+        $limit = Input::get('limit');
+        $musicDB = new MusicModel();
+        $results = $musicDB->lookUp($q, $offset, $limit);
+        return Response::make($results, 400);
     }
 
 }
