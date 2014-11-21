@@ -9,7 +9,7 @@
  *      basePath="http://video-lyrics.herokuapp.com/1.0",
  *      @SWG\Api(
  *          description="Recommender system.",
- *          path="/rate/",
+ *          path="/rate",
  *          @SWG\Operation(
  *              method="POST",
  *              summary="Rate an object (video, lyrics or music).",

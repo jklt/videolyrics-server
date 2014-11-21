@@ -5,7 +5,7 @@
     "resourcePath": "rate",
     "apis": [
         {
-            "path": "/rate/",
+            "path": "/rate",
             "description": "Recommender system.",
             "operations": [
                 {

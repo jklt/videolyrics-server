@@ -8,7 +8,7 @@
  *      basePath="http://video-lyrics.herokuapp.com/1.0",
  *      @SWG\Api(
  *          description="Music look-up engine.",
- *          path="/music/list/",
+ *          path="/music/list",
  *          @SWG\Operation(
  *              method="GET",
  *              summary="List music.",
@@ -40,7 +40,7 @@
  *      ),
  *      @SWG\Api(
  *          description="Music information.",
- *          path="/music/",
+ *          path="/music",
  *          @SWG\Operation(
  *              method="GET",
  *              summary="Retrieve information about music.",
