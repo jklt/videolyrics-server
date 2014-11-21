@@ -1,0 +1,38 @@
+{
+    "basePath": "http://video-lyrics.herokuapp.com/1.0/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0",
+    "resourcePath": "/lyrics",
+    "apis": [
+        {
+            "path": "/lyrics/",
+            "description": "Lyrics look-up engine.",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Look-up lyrics.",
+                    "nickname": "lyrics",
+                    "parameters": [
+                        {
+                            "name": "lyricsID",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "The ID of the lyrics. If nothing is specified, a list containing all lyrics is returned."
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "A response containing an object with fields lyricsID (the ID of the lyrics) and lyrics (the lyrics themselves). If nothing was found, then false will be returned."
+                        },
+                        {
+                            "code": 500,
+                            "message": "The query could not be executed."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

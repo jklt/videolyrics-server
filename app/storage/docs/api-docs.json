@@ -1,0 +1,22 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.2",
+    "apis": [
+        {
+            "path": "/lyrics.{format}",
+            "description": "Lyrics look-up engine."
+        },
+        {
+            "path": "/music.{format}",
+            "description": "Music look-up engine."
+        },
+        {
+            "path": "/rate.{format}",
+            "description": "Recommender system."
+        },
+        {
+            "path": "/video.{format}",
+            "description": "Video look-up engine."
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "basePath": "video-lyrics.herokuapp.com",
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0",
+    "resourcePath": "/rate",
+    "apis": [
+        {
+            "path": "/rate/",
+            "description": "Recommender system.",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Rate an object (video, lyrics or music).",
+                    "nickname": "rate",
+                    "parameters": [
+                        {
+                            "name": "objectType",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "The type of object that will be rated (video, lyrics or music)."
+                        },
+                        {
+                            "name": "objectID",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "The ID of the object for which the average rating will be calculated."
+                        },
+                        {
+                            "name": "IP",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "IP of the machine from which the vote was initiated."
+                        },
+                        {
+                            "name": "rating",
+                            "type": "integer",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "The rating (either -1, 0 or 1) where -1 means a negative rating, 0 means neutral or no rating and 1 means positive rating."
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "The vote was saved."
+                        },
+                        {
+                            "code": 500,
+                            "message": "The vote could not be saved."
+                        }
+                    ]
+                },
+                {
+                    "method": "GET",
+                    "summary": "Get the average rating of an object (video, lyrics or music).",
+                    "nickname": "videoRating",
+                    "parameters": [
+                        {
+                            "name": "objectType",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "The type of object for which the average rating will be returned."
+                        },
+                        {
+                            "name": "objectID",
+                            "type": "string",
+                            "required": false,
+                            "allowMultiple": false,
+                            "description": "The ID of the object for which the average rating will be returned. If no ID is specified, it will return a list of all objects of the specified type with its average rating."
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "A response containing a list containing objects with fields objectID (the ID of the object) and avgRating (the average rating)."
+                        },
+                        {
+                            "code": 500,
+                            "message": "The rating could not be fetched."
+                        }
+                    ],
+                    "notes": "The average rating consists of a number where -1 means negative, 1 means positive, 0 means neutral and everything in between is also possible."
+                }
+            ]
+        }
+    ]
+}
