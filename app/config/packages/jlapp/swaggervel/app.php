@@ -7,6 +7,9 @@
  */
 
 echo app_path();
+$files2 = scandir(app_path(), 1);
+
+print_r($files2);
 die();
 
 return array(
