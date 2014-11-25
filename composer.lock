@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ccd85e8ffb43663c9b3c8cf6370a8224",
+    "hash": "649b6afe65a65af5c9feb71523b0ae5d",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -266,6 +266,164 @@
             "time": "2014-10-26 09:05:09"
         },
         {
+            "name": "guzzlehttp/guzzle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "bb4f6c82af4f610bbb8d6a83f7814c09c5a8ea6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/bb4f6c82af4f610bbb8d6a83f7814c09c5a8ea6f",
+                "reference": "bb4f6c82af4f610bbb8d6a83f7814c09c5a8ea6f",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/ringphp": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "~4.0",
+                "psr/log": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2014-11-17 23:22:53"
+        },
+        {
+            "name": "guzzlehttp/ringphp",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/RingPHP.git",
+                "reference": "e7c28f96c5ac12ab0e63412cfc15989756fcb964"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/e7c28f96c5ac12ab0e63412cfc15989756fcb964",
+                "reference": "e7c28f96c5ac12ab0e63412cfc15989756fcb964",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/streams": "~3.0",
+                "php": ">=5.4.0",
+                "react/promise": "~2.0"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "ext-curl": "Guzzle will use specific adapters if cURL is present"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Ring\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "time": "2014-11-04 07:01:14"
+        },
+        {
+            "name": "guzzlehttp/streams",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/streams.git",
+                "reference": "47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/streams/zipball/47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
+                "reference": "47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Stream\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Provides a simple abstraction over streams of data",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "Guzzle",
+                "stream"
+            ],
+            "time": "2014-10-12 19:18:40"
+        },
+        {
             "name": "ircmaxell/password-compat",
             "version": "v1.0.4",
             "source": {
@@ -361,12 +519,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/slampenny/Swaggervel.git",
-                "reference": "6e75f294ffa65823247e1f9f9f88402a75aa14f5"
+                "reference": "a0445a4b6d8a0c4adf29ea21dca9a6fa179c3f3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slampenny/Swaggervel/zipball/6e75f294ffa65823247e1f9f9f88402a75aa14f5",
-                "reference": "6e75f294ffa65823247e1f9f9f88402a75aa14f5",
+                "url": "https://api.github.com/repos/slampenny/Swaggervel/zipball/a0445a4b6d8a0c4adf29ea21dca9a6fa179c3f3a",
+                "reference": "a0445a4b6d8a0c4adf29ea21dca9a6fa179c3f3a",
                 "shasum": ""
             },
             "require": {
@@ -394,7 +552,7 @@
                 "laravel",
                 "swagger"
             ],
-            "time": "2014-11-20 21:43:03"
+            "time": "2014-11-21 18:08:23"
         },
         {
             "name": "laravel/framework",
@@ -510,51 +668,6 @@
                 "laravel"
             ],
             "time": "2014-10-04 18:48:27"
-        },
-        {
-            "name": "madcoda/php-youtube-api",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/madcoda/php-youtube-api.git",
-                "reference": "dd009e9e2d8463ef75adb0f5861db67ddf89cc84"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/madcoda/php-youtube-api/zipball/dd009e9e2d8463ef75adb0f5861db67ddf89cc84",
-                "reference": "dd009e9e2d8463ef75adb0f5861db67ddf89cc84",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">5.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*@stable"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Madcoda": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Madcoda",
-                    "email": "jason@madcoda.com"
-                }
-            ],
-            "description": "PHP wrapper for the Youtube Data API v3",
-            "keywords": [
-                "api",
-                "madcoda",
-                "video",
-                "youtube"
-            ],
-            "time": "2014-10-14 11:36:38"
         },
         {
             "name": "monolog/monolog",
@@ -962,17 +1075,61 @@
             "time": "2012-12-21 11:40:51"
         },
         {
-            "name": "stack/builder",
-            "version": "v1.0.2",
+            "name": "react/promise",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/stackphp/builder.git",
-                "reference": "b4af43e7b7f3f7fac919ff475b29f7c5dc7b23b7"
+                "url": "https://github.com/reactphp/promise.git",
+                "reference": "937b04f1b0ee8f6d180e75a0830aac778ca4bcd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stackphp/builder/zipball/b4af43e7b7f3f7fac919ff475b29f7c5dc7b23b7",
-                "reference": "b4af43e7b7f3f7fac919ff475b29f7c5dc7b23b7",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/937b04f1b0ee8f6d180e75a0830aac778ca4bcd6",
+                "reference": "937b04f1b0ee8f6d180e75a0830aac778ca4bcd6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "React\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@googlemail.com"
+                }
+            ],
+            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+            "time": "2014-10-15 20:05:57"
+        },
+        {
+            "name": "stack/builder",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stackphp/builder.git",
+                "reference": "c1f8a4693b55c563405024f708a76ef576c3b276"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stackphp/builder/zipball/c1f8a4693b55c563405024f708a76ef576c3b276",
+                "reference": "c1f8a4693b55c563405024f708a76ef576c3b276",
                 "shasum": ""
             },
             "require": {
@@ -1001,15 +1158,14 @@
             "authors": [
                 {
                     "name": "Igor Wiedler",
-                    "email": "igor@wiedler.ch",
-                    "homepage": "http://wiedler.ch/igor/"
+                    "email": "igor@wiedler.ch"
                 }
             ],
             "description": "Builder for stack middlewares based on HttpKernelInterface.",
             "keywords": [
                 "stack"
             ],
-            "time": "2014-01-28 19:42:24"
+            "time": "2014-11-23 20:37:11"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1902,7 +2058,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "jlapp/swaggervel": 20,
-        "madcoda/php-youtube-api": 20
+        "guzzlehttp/guzzle": 20
     },
     "prefer-stable": false,
     "platform": [],

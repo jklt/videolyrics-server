@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/1.0/video/', array('uses' => 'VideoController@lookUp_10'));
-Route::get('/1.0/lyrics/', array('uses' => 'LyricsController@lookUp_10'));
-Route::get('/1.0/music/', array('uses' => 'MusicController@lookUp_10'));
-Route::get('/1.0/music/list/', array('uses' => 'MusicController@find_10'));
+Route::any('/1.0/proxy/video/{path}', array('uses' => 'VideoController@lookUp_10'));
+Route::any('/1.0/proxy/music/{path}', array('uses' => 'MusicController@lookUp_10'));
 Route::get('/1.0/rate/', array('uses' => 'RateController@lookUp_10'));
 Route::post('/1.0/rate/', array('uses' => 'RateController@rate_10'));
 Route::any('/', function() {

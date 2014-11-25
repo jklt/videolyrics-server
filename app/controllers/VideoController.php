@@ -28,11 +28,11 @@
 
 class VideoController extends Controller {
 
-    public function lookUp_10()
+    public function lookUp_10($path)
     {
         $params = Input::all();
-        $API = new VideoModel();
-        $result = $API::lookUp($params);
+        $API = new APIModel('https://www.googleapis.com/youtube/v3/', ['key' => 'AIzaSyBf6lUGqowSjbJNC7eL61cPS2mBj8wF2NM']);
+        $result = $API->call(Request::method(), $path, $params);
         return Response::make($result, 200);
     }
 

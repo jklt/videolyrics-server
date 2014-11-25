@@ -61,20 +61,12 @@
 
 class MusicController extends Controller {
 
-    public function lookUp_10()
+    public function lookUp_10($path)
     {
-        $musicDB = new MusixMatchModel();
-        $results = $musicDB->lookUp('coldplay');
-    }
-
-    public function find_10()
-    {
-        $q = Input::get('query');
-        $offset = Input::get('offset');
-        $limit = Input::get('limit');
-        $musicDB = new MusicModel();
-        $results = $musicDB->lookUp($q, $offset, $limit);
-        return Response::make($results, 400);
+        $params = Input::all();
+        $API = new APIModel('https://musixmatchcom-musixmatch.p.mashape.com/wsr/1.1/', [], ['X-Mashape-Key' => 'M2vWzykqq9mshOXiNMBGQ8fJF1DHp16VbBwjsnyVW3CqW4ZksQ']);
+        $result = $API->call(Request::method(), $path, $params);
+        return Response::make($result, 200);
     }
 
 }

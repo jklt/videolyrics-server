@@ -1,6 +1,4 @@
 <?php
-use Madcoda\Youtube;
-
 /**
  * Created by PhpStorm.
  * User: kevin
@@ -8,26 +6,15 @@ use Madcoda\Youtube;
  * Time: 7:33 AM
  */
 
-class YouTubeModel extends APIModel {
+class YouTubeModel {
 
-    private static $key = "AIzaSyBf6lUGqowSjbJNC7eL61cPS2mBj8wF2NM";
-
-    public static function getYouTube() {
-        return new Youtube(array('key' => self::$key));
+    public static function search($params) {
+        $API = new APIModel('https://www.googleapis.com/youtube/v3/', ['key' => 'AIzaSyBf6lUGqowSjbJNC7eL61cPS2mBj8wF2NM']);
+        return $API->call('GET', 'search', $params);
     }
 
     public static function lookUp($params) {
-        $API = new YouTubeModel();
-        $cacheLabel = $API->getCacheLabel(array('YouTubeModel', 'lookUp', serialize($params)));
-        if (true || Cache::get($cacheLabel) === null) {
-            $results = self::getYouTube()->searchAdvanced($params);
-            foreach ($results as $result) {
-                self::saveYouTubeVideo($result);
-            }
-            Cache::put($cacheLabel, $results, 0);
-        }
-        $results = Cache::get($cacheLabel);
-        return $results;
+        return self::search(array('q' => 'coldplay', 'part' => 'id'));
     }
 
     public static function saveYouTubeVideo($video) {
