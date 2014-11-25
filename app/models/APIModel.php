@@ -6,7 +6,7 @@
  * Time: 7:33 AM
  */
 
-class APIModel extends Eloquent {
+class APIModel {
 
     public function getCacheLabel($data)
     {

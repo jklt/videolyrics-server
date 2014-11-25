@@ -16,8 +16,10 @@ class VideoModel extends Eloquent {
     protected $table = 'video';
     protected $primaryKey = 'videoID';
 
-    public function lookUp() {
-
+    public static function lookUp($q) {
+        $API = new YouTubeModel();
+        $results = $API->lookUp($q);
+        return $results;
     }
 
 }

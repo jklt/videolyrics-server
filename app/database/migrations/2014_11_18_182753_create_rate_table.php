@@ -12,6 +12,7 @@ class CreateRateTable extends Migration {
 	 */
 	public function up()
 	{
+        $this->down();
 		Schema::create('rate', function(Blueprint $table)
 		{
             $table->increments('rateID');
@@ -24,17 +25,24 @@ class CreateRateTable extends Migration {
         Schema::create('music', function(Blueprint $table)
         {
             $table->increments('musicID');
-            $table->integer('lyricsID');
-            $table->integer('videoID');
             $table->string('image');
             $table->string('image-thumbnail');
             $table->timestamps();
         });
         Schema::create('video', function(Blueprint $table)
         {
-            $table->increments('videoID');
-            $table->string('URL');
-            $table->timestamps();
+            $table->string('videoID');
+            $table->primary('videoID');
+            $table->string('publishedAt');
+            $table->string('channelId');
+            $table->string('title');
+            $table->string('search');
+            $table->string('description');
+            $table->string('thumbnails_default');
+            $table->string('thumbnails_medium');
+            $table->string('thumbnails_high');
+            $table->string('channelTitle');
+            $table->string('liveBroadcastContent');
         });
         Schema::create('lyrics', function(Blueprint $table)
         {

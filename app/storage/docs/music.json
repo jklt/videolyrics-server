@@ -58,7 +58,7 @@
                             "description": "The first few items (specified by the offset parameter) will not be included in the results (no offset as default)."
                         },
                         {
-                            "name": "items",
+                            "name": "limit",
                             "type": "string",
                             "required": false,
                             "allowMultiple": false,
