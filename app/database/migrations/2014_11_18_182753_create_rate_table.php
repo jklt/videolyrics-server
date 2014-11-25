@@ -33,21 +33,6 @@ class CreateRateTable extends Migration {
         {
             $table->string('videoID');
             $table->primary('videoID');
-            $table->string('publishedAt');
-            $table->string('channelId');
-            $table->string('title');
-            $table->string('search');
-            $table->string('description');
-            $table->string('thumbnails_default');
-            $table->string('thumbnails_medium');
-            $table->string('thumbnails_high');
-            $table->string('channelTitle');
-            $table->string('liveBroadcastContent');
-        });
-        Schema::create('lyrics', function(Blueprint $table)
-        {
-            $table->increments('lyricsID');
-            $table->string('lyrics');
             $table->timestamps();
         });
 	}
@@ -70,10 +55,6 @@ class CreateRateTable extends Migration {
         Schema::table('video', function(Blueprint $table)
         {
             Schema::dropIfExists('video');
-        });
-        Schema::table('lyrics', function(Blueprint $table)
-        {
-            Schema::dropIfExists('lyrics');
         });
 	}
 

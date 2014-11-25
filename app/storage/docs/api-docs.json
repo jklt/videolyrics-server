@@ -3,10 +3,6 @@
     "swaggerVersion": "1.2",
     "apis": [
         {
-            "path": "/lyrics.{format}",
-            "description": "Lyrics look-up engine."
-        },
-        {
             "path": "/music.{format}",
             "description": "Music look-up engine."
         },

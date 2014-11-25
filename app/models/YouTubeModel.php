@@ -16,11 +16,12 @@ class YouTubeModel extends APIModel {
         return new Youtube(array('key' => self::$key));
     }
 
-    public static function lookUp($q) {
+    public static function lookUp($params) {
         $API = new YouTubeModel();
-        $cacheLabel = $API->getCacheLabel(array('YouTubeModel', 'lookUp', $q));
+        $cacheLabel = $API->getCacheLabel(array('YouTubeModel', 'lookUp', serialize($params)));
         if (Cache::get($cacheLabel) === null) {
-            $results = self::getYouTube()->searchVideos($q);
+            $results = self::getYouTube()->searchAdvanced($params, true);
+            $results = $results['results'];
             foreach ($results as $result) {
                 self::saveYouTubeVideo($result);
             }
@@ -31,24 +32,16 @@ class YouTubeModel extends APIModel {
     }
 
     public static function saveYouTubeVideo($video) {
-        $counter = DB::table('video')->where('videoID', $video->id->videoId)->count();
-        if ($counter == 0) {
-            $data = array(
-                'videoID' => $video->id->videoId,
-                'publishedAt' => $video->snippet->publishedAt,
-                'channelId' => $video->snippet->channelId,
-                'title' => $video->snippet->title,
-                'search' => strtolower($video->snippet->title),
-                'description' => $video->snippet->description,
-                'thumbnails_default' => $video->snippet->thumbnails->default->url,
-                'thumbnails_medium' => $video->snippet->thumbnails->medium->url,
-                'thumbnails_high' => $video->snippet->thumbnails->high->url,
-                'channelTitle' => $video->snippet->channelTitle,
-                'liveBroadcastContent' => $video->snippet->liveBroadcastContent
-            );
-            DB::table('video')->insert(
-                $data
-            );
+        if (isset($video->id->videoId)) {
+            $counter = DB::table('video')->where('videoID', $video->id->videoId)->count();
+            if ($counter == 0) {
+                $data = array(
+                    'videoID' => $video->id->videoId,
+                );
+                DB::table('video')->insert(
+                    $data
+                );
+            }
         }
     }
 

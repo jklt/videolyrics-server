@@ -30,9 +30,9 @@ class VideoController extends Controller {
 
     public function lookUp_10()
     {
-        $q = Input::get('q');
+        $params = Input::all();
         $API = new VideoModel();
-        $result = $API::lookUp($q);
+        $result = $API::lookUp($params);
         return Response::make($result, 200);
     }
 
