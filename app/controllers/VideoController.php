@@ -6,20 +6,14 @@
  *      resourcePath="video",
  *      basePath="http://video-lyrics.herokuapp.com/1.0",
  *      @SWG\Api(
- *          description="Video look-up engine.",
- *          path="/video",
+ *          description="Video look-up engine (YouTube proxy).",
+ *          path="/proxy/youtube",
  *          @SWG\Operation(
  *              method="GET",
- *              summary="Look-up a video.",
- *              nickname="video",
- *              @SWG\Parameter(
- *                  name="videoID",
- *                  required=true,
- *                  allowMultiple=false,
- *                  type="string",
- *                  description="The ID of a video. If nothing is specified, a list containing all videos is returned."
- *              ),
- *              @SWG\ResponseMessage(code=200, message="A response containing an object with fields videoID (the ID of the video) and URL (the URL of the video). If nothing was found, then false will be returned."),
+ *              summary="Proxy to the YouTube API. For example, you can call /video/search just like you would call search on the YouTube API.",
+ *              nickname="music",
+
+ *              @SWG\ResponseMessage(code=200, message="A response from the YouTube API."),
  *              @SWG\ResponseMessage(code=500, message="The query could not be executed.")
  *          )
  *      )
@@ -28,7 +22,7 @@
 
 class VideoController extends Controller {
 
-    public function lookUp_10($path)
+    public function lookUpYouTube_10($path)
     {
         $params = Input::all();
         $API = new APIModel('https://www.googleapis.com/youtube/v3/', ['key' => 'AIzaSyBf6lUGqowSjbJNC7eL61cPS2mBj8wF2NM']);

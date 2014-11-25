@@ -10,7 +10,7 @@
             "operations": [
                 {
                     "method": "POST",
-                    "summary": "Rate an object (video, lyrics or music).",
+                    "summary": "Rate an object (video, lyrics, music or a custom defined type).",
                     "nickname": "rate",
                     "parameters": [
                         {
@@ -18,7 +18,7 @@
                             "type": "string",
                             "required": true,
                             "allowMultiple": false,
-                            "description": "The type of object that will be rated (video, lyrics or music)."
+                            "description": "The type of object that will be rated (video, lyrics, music or a custom defined type)."
                         },
                         {
                             "name": "objectID",
@@ -55,7 +55,7 @@
                 },
                 {
                     "method": "GET",
-                    "summary": "Get the average rating of an object (video, lyrics or music).",
+                    "summary": "Get the average rating of an object (video, lyrics, music or a custom defined type).",
                     "nickname": "videoRating",
                     "parameters": [
                         {

@@ -12,14 +12,14 @@
  *          path="/rate",
  *          @SWG\Operation(
  *              method="POST",
- *              summary="Rate an object (video, lyrics or music).",
+ *              summary="Rate an object (video, lyrics, music or a custom defined type).",
  *              nickname="rate",
  *              @SWG\Parameter(
  *                  name="objectType",
  *                  required=true,
  *                  allowMultiple=false,
  *                  type="string",
- *                  description="The type of object that will be rated (video, lyrics or music)."
+ *                  description="The type of object that will be rated (video, lyrics, music or a custom defined type)."
  *              ),
  *              @SWG\Parameter(
  *                  name="objectID",
@@ -47,7 +47,7 @@
  *          ),
  *          @SWG\Operation(
  *              method="GET",
- *              summary="Get the average rating of an object (video, lyrics or music).",
+ *              summary="Get the average rating of an object (video, lyrics, music or a custom defined type).",
  *              notes="The average rating consists of a number where -1 means negative, 1 means positive, 0 means neutral and everything in between is also possible.",
  *              nickname="videoRating",
  *              @SWG\Parameter(
@@ -75,7 +75,7 @@ class RateController extends Controller {
 
     public function rate_10()
     {
-
+        print_r(Input:all());
     }
 
     public function lookup_10()

@@ -11,8 +11,8 @@
 |
 */
 
-Route::any('/1.0/proxy/video/{path}', array('uses' => 'VideoController@lookUp_10'));
-Route::any('/1.0/proxy/music/{path}', array('uses' => 'MusicController@lookUp_10'));
+Route::any('/1.0/proxy/youtube/{path}', array('uses' => 'VideoController@lookUpYouTube_10'));
+Route::any('/1.0/proxy/musixmatch/{path}', array('uses' => 'MusicController@lookUpMusixMatch_10'));
 Route::get('/1.0/rate/', array('uses' => 'RateController@lookUp_10'));
 Route::post('/1.0/rate/', array('uses' => 'RateController@rate_10'));
 Route::any('/', function() {

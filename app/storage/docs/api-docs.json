@@ -4,7 +4,7 @@
     "apis": [
         {
             "path": "/music.{format}",
-            "description": "Music look-up engine."
+            "description": "Music look-up engine (MusixMatch proxy)."
         },
         {
             "path": "/rate.{format}",
@@ -12,7 +12,7 @@
         },
         {
             "path": "/video.{format}",
-            "description": "Video look-up engine."
+            "description": "Video look-up engine (YouTube proxy)."
         }
     ]
 }

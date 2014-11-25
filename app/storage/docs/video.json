@@ -5,26 +5,17 @@
     "resourcePath": "video",
     "apis": [
         {
-            "path": "/video",
-            "description": "Video look-up engine.",
+            "path": "/proxy/video",
+            "description": "Video look-up engine (YouTube proxy).",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "Look-up a video.",
-                    "nickname": "video",
-                    "parameters": [
-                        {
-                            "name": "videoID",
-                            "type": "string",
-                            "required": true,
-                            "allowMultiple": false,
-                            "description": "The ID of a video. If nothing is specified, a list containing all videos is returned."
-                        }
-                    ],
+                    "summary": "Proxy to the YouTube API. For example, you can call /video/search just like you would call search on the YouTube API.",
+                    "nickname": "music",
                     "responseMessages": [
                         {
                             "code": 200,
-                            "message": "A response containing an object with fields videoID (the ID of the video) and URL (the URL of the video). If nothing was found, then false will be returned."
+                            "message": "A response from the YouTube API."
                         },
                         {
                             "code": 500,
