@@ -26,7 +26,7 @@ class YouTubeModel extends APIModel {
             }
             Cache::put($cacheLabel, $results, 0);
         }
-        $results = VideoModel::where('search', 'LIKE', '%' . strtolower($q) . '%')->get();
+        $results = Cache::get($cacheLabel);
         return $results;
     }
 
