@@ -21,8 +21,8 @@ class YouTubeModel extends APIModel {
         $cacheLabel = $API->getCacheLabel(array('YouTubeModel', 'lookUp', serialize($params)));
         if (Cache::get($cacheLabel) === null) {
             $results = self::getYouTube()->searchAdvanced($params, true);
-            $results = $results['results'];
-            foreach ($results as $result) {
+            $saveResults = $results['results'];
+            foreach ($saveResults as $result) {
                 self::saveYouTubeVideo($result);
             }
             Cache::put($cacheLabel, $results, 0);
