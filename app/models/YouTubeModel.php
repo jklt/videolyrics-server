@@ -19,10 +19,9 @@ class YouTubeModel extends APIModel {
     public static function lookUp($params) {
         $API = new YouTubeModel();
         $cacheLabel = $API->getCacheLabel(array('YouTubeModel', 'lookUp', serialize($params)));
-        if (Cache::get($cacheLabel) === null) {
-            $results = self::getYouTube()->searchAdvanced($params, true);
-            $saveResults = $results['results'];
-            foreach ($saveResults as $result) {
+        if (true || Cache::get($cacheLabel) === null) {
+            $results = self::getYouTube()->searchAdvanced($params);
+            foreach ($results as $result) {
                 self::saveYouTubeVideo($result);
             }
             Cache::put($cacheLabel, $results, 0);
