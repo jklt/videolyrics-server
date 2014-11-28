@@ -15,5 +15,6 @@ class RateModel extends Eloquent {
      */
     protected $table = 'rate';
     protected $primaryKey = 'rateID';
+    protected $fillable = array('IP', 'objectID', 'objectType', 'score');
 
 }

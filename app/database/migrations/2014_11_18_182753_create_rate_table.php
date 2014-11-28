@@ -19,8 +19,7 @@ class CreateRateTable extends Migration {
             $table->string('objectType');
             $table->string('objectID');
             $table->string('IP');
-            $table->integer('score');
-            $table->timestamps();
+            $table->string('score');
 		});
 	}
 

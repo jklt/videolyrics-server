@@ -5,7 +5,7 @@
     "resourcePath": "video",
     "apis": [
         {
-            "path": "/proxy/video",
+            "path": "/proxy/youtube",
             "description": "Video look-up engine (YouTube proxy).",
             "operations": [
                 {

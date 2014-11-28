@@ -75,12 +75,87 @@ class RateController extends Controller {
 
     public function rate_10()
     {
-        print_r(Input:all());
+        $input = Input::all();
+        $data = array(
+            'objectType' => $input['objectType'],
+            'objectID' => $input['objectID'],
+            'IP' => $input['IP'],
+            'score' => $input['rating']
+        );
+        DB::table('rate')->insert($data);
+        return Response::make(array(), 200);
     }
 
     public function lookup_10()
     {
-        echo 'abc';
+        $objectType = Input::get('objectType');
+        $objectID = Input::get('objectID');
+        $scores = array();
+        $counts = array();
+        $types = array();
+        $results = null;
+        if ($objectType != null) {
+            $results = RateModel::where('objectType', '=', "video");
+            if ($objectID != null) {
+                $results = $results->where('objectID', '=', array($objectID));
+            }
+        }
+        if ($results == null) {
+            $results = RateModel::all();
+        } else {
+            $results = $results->get();
+        }
+        $response = array();
+        foreach ($results as $result) {
+            $objectID = $result['objectID'];
+            if (!in_array($result['objectID'], array_keys($scores))) {
+                $scores[$objectID] = array();
+                $counts[$objectID] = array();
+                $types[$objectID] = $result['objectType'];
+            }
+            if (!in_array($result['IP'], array_keys($scores[$objectID]))) {
+                $scores[$objectID][$result['IP']] = 0;
+                $counts[$objectID][$result['IP']] = 0;
+            }
+            $scores[$objectID][$result['IP']] += $result['score'];
+            $counts[$objectID][$result['IP']] += 1;
+        }
+        $avgPerIP = array();
+        $avg = array();
+        $uniqueVotes = array();
+        $votes = array();
+        foreach ($scores as $objectID => $subdata) {
+            $avgPerIP[$objectID] = array();
+            $avg[$objectID] = array();
+            $votes[$objectID] = 0;
+            foreach ($subdata as $IP => $score) {
+                $avgPerIP[$objectID][$IP] = $scores[$objectID][$IP] / $counts[$objectID][$IP];
+                $votes[$objectID]++;
+            }
+        }
+        foreach ($avgPerIP as $objectID => $subdata) {
+            $avg[$objectID] = 0;
+            $uniqueVotes[$objectID] = 0;
+            $n = 0;
+            foreach ($subdata as $IP => $score) {
+                $avg[$objectID] += $score;
+                $uniqueVotes[$objectID] += 1;
+                $n++;
+            }
+            if ($n != 0) {
+                $avg[$objectID] = $avg[$objectID] / $n;
+            }
+        }
+        foreach ($avg as $objectID => $score) {
+            $response[$objectID] = array(
+                'type' => $types[$objectID],
+                'rating' => $score,
+                'uniqueVotes' => $uniqueVotes[$objectID],
+                'votes' => $votes[$objectID]
+            );
+        }
+
+        return Response::make($response, 200);
     }
 
 }

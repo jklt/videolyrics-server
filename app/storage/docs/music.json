@@ -5,7 +5,7 @@
     "resourcePath": "music",
     "apis": [
         {
-            "path": "/proxy/music",
+            "path": "/proxy/musixmatch",
             "description": "Music look-up engine (MusixMatch proxy).",
             "operations": [
                 {
@@ -16,6 +16,27 @@
                         {
                             "code": 200,
                             "message": "A response from the MusixMatch API."
+                        },
+                        {
+                            "code": 500,
+                            "message": "The query could not be executed."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/proxy/spotify",
+            "description": "Music look-up engine (Spotify proxy).",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Proxy to the Spotify API. For example, you can call /music/track.search just like you would call track.search on the MusixMatch API.",
+                    "nickname": "music",
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "A response from the Spotify API."
                         },
                         {
                             "code": 500,
