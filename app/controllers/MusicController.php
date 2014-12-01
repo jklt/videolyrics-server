@@ -64,9 +64,9 @@ class MusicController extends Controller {
 
     public function lookupChartLyrics_10($path) {
         $params = Input::all();
-        $API = new APIModel('http://api.chartlyrics.com/apiv1.asmx', [], []);
+        $API = new APIModel('http://api.chartlyrics.com/apiv1.asmx/', [], []);
         $result = $API->call(Request::method(), $path, $params);
-        return Response::make($result, 200);
+        return Response::make($result, 200)->header('Content-Type', 'text/xml');;
     }
 
 }

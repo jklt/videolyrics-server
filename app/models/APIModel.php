@@ -33,13 +33,19 @@ class APIModel {
             $method,
             $path
         ]);
-        if (true || Cache::get($cacheLabel) === null) {
+        $result = Cache::get($cacheLabel);
+        if ($result === null || strlen($result) == 0) {
+            echo $this->endPoint . $path;
             $req = $client->createRequest($method, $this->endPoint . $path, [
                 'query' => array_merge($this->addParams, $data),
                 'headers' => $this->addHeaders
             ]);
             $res = $client->send($req);
-            $results = $res->json();
+            try {
+                $results = $res->json();
+            } catch (Exception $e) {
+                $results = $res->getBody() . '';
+            }
             Cache::put($cacheLabel, $results, 0);
         }
         $results = Cache::get($cacheLabel);
