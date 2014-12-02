@@ -34,7 +34,7 @@ class APIModel {
             $path
         ]);
         $result = Cache::get($cacheLabel);
-        if ($result === null || strlen($result) == 0) {
+        if ($result === null) {
             echo $this->endPoint . $path;
             $req = $client->createRequest($method, $this->endPoint . $path, [
                 'query' => array_merge($this->addParams, $data),
