@@ -5,6 +5,27 @@
     "resourcePath": "music",
     "apis": [
         {
+            "path": "/proxy/chartlyrics",
+            "description": "Music look-up engine (ChartLyrics proxy).",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Proxy to the ChartLyrics API. For example, you can call /SearchLyric?artist=Coldplay&song=Yellow just like you would call it on the ChartLyrics API.",
+                    "nickname": "music",
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "A response from the ChartLyrics API."
+                        },
+                        {
+                            "code": 500,
+                            "message": "The query could not be executed."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "path": "/proxy/musixmatch",
             "description": "Music look-up engine (MusixMatch proxy).",
             "operations": [
