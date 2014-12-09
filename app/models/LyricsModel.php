@@ -25,8 +25,8 @@ class LyricsModel {
         $part = $parts[1];
         $parts = explode('<!-- end of lyrics -->', $part);
         $data = $parts[0];
-        $data = str_replace("<br />", "\n", $data);
-        $data = str_replace("<br>", "\n", $data);
+        $data = str_replace("\r", "", $data);
+        $data = str_replace("\n", "<br />", $data);
         return array('lyrics' => $data);
     }
 

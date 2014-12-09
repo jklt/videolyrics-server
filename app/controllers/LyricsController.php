@@ -24,10 +24,6 @@ class LyricsController extends Controller {
 
     public function scrapeLyrics_10()
     {
-        /*$params = Input::all();
-        $API = new APIModel('https://api.spotify.com/v1/', [], ['X-Mashape-Key' => 'M2vWzykqq9mshOXiNMBGQ8fJF1DHp16VbBwjsnyVW3CqW4ZksQ']);
-        $result = $API->call(Request::method(), $path, $params);
-        return Response::make($result, 200);*/
         $scraper = new LyricsModel();
         $result = $scraper->scrape(Input::get('q'));
         return Response::make($result, 200);
