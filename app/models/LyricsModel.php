@@ -41,14 +41,27 @@ class LyricsModel {
         }
         $bestResult = $results[0];
         $url = $bestResult['url'];
+
+        $hasFetched = false;
         if (Cache::get('lyrics.url' . $url) !== null) {
             $data = Cache::get('lyrics.url' . $url);
-        } else {
+            $hasFetched = true;
+        }
+        $data = file_get_contents($url);
+        preg_match_all('/<meta content="(.*?)" /s', $data, $matches);
+        if (count($matches) == 0 || count($matches[0]) == 0) $hasFetched = false;
+
+        if (!$hasFetched) {
             $data = file_get_contents($url);
             Cache::put('lyrics.url' . $url, $data, 0);
         }
+
         preg_match_all('/<meta content="(.*?)" /s', $data, $matches);
-        $lyrics = str_replace('&#x000A;', "\n", $matches[1][2]);
+        if (count($matches) == 0 || count($matches[0]) == 0) {
+            $lyrics = $bestResult['snippet'];
+        } else {
+            $lyrics = str_replace('&#x000A;', "\n", $matches[1][2]);
+        }
         return array('lyrics' => $lyrics);
     }
 
