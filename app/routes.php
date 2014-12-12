@@ -13,7 +13,7 @@
 
 Route::any('/1.0/proxy/youtube/{path?}', array('uses' => 'VideoController@lookUpYouTube_10'))->where('path', '(.*)');
 Route::any('/1.0/proxy/spotify/{path?}', array('uses' => 'MusicController@lookUpSpotify_10'))->where('path', '(.*)');
-Route::any('/1.0/proxy/chartlyrics/{path?}', array('uses' => 'MusicController@lookUpChartLyrics_10'))->where('path', '(.*)');
+Route::any('/1.0/proxy/lyrics/{artist}/{title}', array('uses' => 'LyricsController@fetchLyrics_10'))->where('path', '(.*)');
 Route::any('/1.0/scraper/azlyrics/', array('uses' => 'LyricsController@scrapeLyrics_10'))->where('path', '(.*)');
 Route::get('/1.0/rate/', array('uses' => 'RateController@lookUp_10'));
 Route::post('/1.0/rate/', array('uses' => 'RateController@rate_10'));

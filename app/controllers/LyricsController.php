@@ -35,4 +35,10 @@ class LyricsController extends Controller {
         $scraper->scrapeAll($year, $month);
     }
 
+    public function fetchLyrics_10($artist, $title) {
+        $scraper = new LyricsModel();
+        $result = $scraper->fetch($artist, $title);
+        return Response::make($result, 200);
+    }
+
 }
