@@ -32,6 +32,8 @@ class LyricsModel {
 
     public function fetch($artist, $title) {
         $query = $artist . ' ' . $title;
+        return $this->scrape($query);
+
         if (Cache::get('lyrics.apiResult' . $query) !== null) {
             $results = Cache::get('lyrics.apiResult' . $query);
         } else {
@@ -41,7 +43,6 @@ class LyricsModel {
         }
         $bestResult = $results[0];
         $url = $bestResult['url'];
-
         $hasFetched = false;
         if (Cache::get('lyrics.url' . $url) !== null) {
             $data = Cache::get('lyrics.url' . $url);
